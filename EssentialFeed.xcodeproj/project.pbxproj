@@ -10,6 +10,7 @@
 		7B7E3D54298B1B8A0023E027 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E3D4B298B1B890023E027 /* EssentialFeed.framework */; };
 		7B7E3D59298B1B8A0023E027 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E3D58298B1B8A0023E027 /* EssentialFeedTests.swift */; };
 		7B7E3D5A298B1B8A0023E027 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B7E3D4E298B1B890023E027 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B7E3D64298B1BA40023E027 /* Feedtem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E3D63298B1BA40023E027 /* Feedtem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		7B7E3D4E298B1B890023E027 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		7B7E3D53298B1B8A0023E027 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7E3D58298B1B8A0023E027 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
+		7B7E3D63298B1BA40023E027 /* Feedtem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedtem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		7B7E3D4D298B1B890023E027 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				7B7E3D63298B1BA40023E027 /* Feedtem.swift */,
 				7B7E3D4E298B1B890023E027 /* EssentialFeed.h */,
 			);
 			path = EssentialFeed;
@@ -144,6 +147,7 @@
 				TargetAttributes = {
 					7B7E3D4A298B1B890023E027 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					7B7E3D52298B1B8A0023E027 = {
 						CreatedOnToolsVersion = 14.2;
@@ -191,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7E3D64298B1BA40023E027 /* Feedtem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +340,7 @@
 		7B7E3D5E298B1B8A0023E027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -356,6 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,6 +370,7 @@
 		7B7E3D5F298B1B8A0023E027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -391,6 +399,7 @@
 		7B7E3D61298B1B8A0023E027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYXPW2Z6TM;
@@ -406,6 +415,7 @@
 		7B7E3D62298B1B8A0023E027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYXPW2Z6TM;
