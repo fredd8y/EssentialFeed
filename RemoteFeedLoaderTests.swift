@@ -6,32 +6,7 @@
 //
 
 import XCTest
-
-// MARK: - RemoteFeedLoader
-
-class RemoteFeedLoader {
-	// MARK: Lifecycle
-
-	init(url: URL, client: HTTPClient) {
-		self.url = url
-		self.client = client
-	}
-
-	// MARK: Internal
-
-	let client: HTTPClient
-	let url: URL
-
-	func load() {
-		client.get(from: url)
-	}
-}
-
-// MARK: - HTTPClient
-
-protocol HTTPClient {
-	func get(from url: URL)
-}
+import EssentialFeed
 
 // MARK: - RemoteFeedLoaderTests
 

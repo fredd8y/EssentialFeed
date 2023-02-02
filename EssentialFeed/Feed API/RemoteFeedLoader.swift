@@ -1,0 +1,36 @@
+//
+//  RemoteFeedLoader.swift
+//  EssentialFeed
+//
+//  Created by Federico Arvat on 02/02/23.
+//
+
+import Foundation
+
+// MARK: - HTTPClient
+
+public protocol HTTPClient {
+	func get(from url: URL)
+}
+
+// MARK: - RemoteFeedLoader
+
+public final class RemoteFeedLoader {
+	// MARK: Lifecycle
+
+	public init(url: URL, client: HTTPClient) {
+		self.url = url
+		self.client = client
+	}
+
+	// MARK: Public
+
+	public func load() {
+		client.get(from: url)
+	}
+
+	// MARK: Private
+
+	private let url: URL
+	private let client: HTTPClient
+}
