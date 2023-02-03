@@ -66,7 +66,7 @@ public final class RemoteFeedLoader {
 
 // MARK: - FeedItemsMapper
 
-private enum FeedItemsMapper {
+private class FeedItemsMapper {
 	static func map(_ data: Data, response: HTTPURLResponse) throws -> [FeedItem] {
 		guard response.statusCode == 200 else {
 			throw RemoteFeedLoader.Error.invalidData
