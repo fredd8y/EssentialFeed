@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - RemoteFeedLoader
 
-public final class RemoteFeedLoader {
+public final class RemoteFeedLoader: FeedLoader {
 	// MARK: Lifecycle
 
 	public init(url: URL, client: HTTPClient) {
