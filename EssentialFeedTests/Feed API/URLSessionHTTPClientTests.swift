@@ -10,7 +10,7 @@ import XCTest
 
 // MARK: - URLSessionHTTPClient
 
-class URLSessionHTTPClient {
+class URLSessionHTTPClient: HTTPClient {
 	struct UnexpectedValuesRepresentation: Error {}
 
 	// MARK: Lifecycle
@@ -235,7 +235,7 @@ class URLSessionHTTPClientTests: XCTestCase {
 		return URL(string: "http://any-url.com")!
 	}
 
-	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> URLSessionHTTPClient {
+	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
 		let sut = URLSessionHTTPClient()
 		trackForMemoryLeaks(sut, file: file, line: line)
 		return sut
