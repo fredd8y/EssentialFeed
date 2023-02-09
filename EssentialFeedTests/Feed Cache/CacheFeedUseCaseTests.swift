@@ -39,50 +39,13 @@ class LocalFeedLoader {
 
 // MARK: - FeedStore
 
-class FeedStore {
+protocol FeedStore {
 	typealias DeletionCompletion = (Error?) -> Void
 	typealias InsertionCompletion = (Error?) -> Void
 
-	// MARK: Internal
+	func deleteCacheFeed(completion: @escaping DeletionCompletion)
 
-	enum ReceivedMessage: Equatable {
-		case deleteCachedFeed
-		case insert([FeedItem], Date)
-	}
-
-	private(set) var receivedMessages = [ReceivedMessage]()
-
-	func deleteCacheFeed(completion: @escaping DeletionCompletion) {
-		deletionCompletions.append(completion)
-		receivedMessages.append(.deleteCachedFeed)
-	}
-
-	func completeDeletion(with error: Error, at index: Int = 0) {
-		deletionCompletions[index](error)
-	}
-
-	func completeDeletionSuccessfully(at index: Int = 0) {
-		deletionCompletions[index](nil)
-	}
-
-	func insert(_ items: [FeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
-		insertionCompletions.append(completion)
-		receivedMessages.append(.insert(items, timestamp))
-	}
-
-	func completeInsertion(with error: Error, at index: Int = 0) {
-		insertionCompletions[index](error)
-	}
-
-	func completeInsertionSuccessfully(at index: Int = 0) {
-		insertionCompletions[index](nil)
-	}
-
-	// MARK: Private
-
-	private var deletionCompletions = [DeletionCompletion]()
-
-	private var insertionCompletions = [InsertionCompletion]()
+	func insert(_ items: [FeedItem], timestamp: Date, completion: @escaping InsertionCompletion)
 }
 
 // MARK: - CacheFeedUseCaseTests
@@ -130,7 +93,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
 	func test_save_failsOnDeletionError() {
 		let (sut, store) = makeSUT()
 		let deletionError = anyNSError()
-		
+
 		expect(sut, toCompleteWithError: deletionError) {
 			store.completeDeletion(with: deletionError)
 		}
@@ -139,7 +102,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
 	func test_save_failsOnInsertionError() {
 		let (sut, store) = makeSUT()
 		let insertionError = anyNSError()
-		
+
 		expect(sut, toCompleteWithError: insertionError) {
 			store.completeDeletionSuccessfully()
 			store.completeInsertion(with: insertionError)
@@ -148,7 +111,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
 
 	func test_save_succeedOnSuccessfulCacheInsertion() {
 		let (sut, store) = makeSUT()
-		
+
 		expect(sut, toCompleteWithError: nil) {
 			store.completeDeletionSuccessfully()
 			store.completeInsertionSuccessfully()
@@ -157,14 +120,60 @@ final class CacheFeedUseCaseTests: XCTestCase {
 
 	// MARK: Private
 
+	private class FeedStoreSpy: FeedStore {
+		typealias DeletionCompletion = (Error?) -> Void
+		typealias InsertionCompletion = (Error?) -> Void
+
+		// MARK: Internal
+
+		enum ReceivedMessage: Equatable {
+			case deleteCachedFeed
+			case insert([FeedItem], Date)
+		}
+
+		private(set) var receivedMessages = [ReceivedMessage]()
+
+		func deleteCacheFeed(completion: @escaping DeletionCompletion) {
+			deletionCompletions.append(completion)
+			receivedMessages.append(.deleteCachedFeed)
+		}
+
+		func completeDeletion(with error: Error, at index: Int = 0) {
+			deletionCompletions[index](error)
+		}
+
+		func completeDeletionSuccessfully(at index: Int = 0) {
+			deletionCompletions[index](nil)
+		}
+
+		func insert(_ items: [FeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
+			insertionCompletions.append(completion)
+			receivedMessages.append(.insert(items, timestamp))
+		}
+
+		func completeInsertion(with error: Error, at index: Int = 0) {
+			insertionCompletions[index](error)
+		}
+
+		func completeInsertionSuccessfully(at index: Int = 0) {
+			insertionCompletions[index](nil)
+		}
+
+		// MARK: Private
+
+		private var deletionCompletions = [DeletionCompletion]()
+
+		private var insertionCompletions = [InsertionCompletion]()
+	}
+
 	// MARK: - Helpers
 
 	private func makeSUT(
 		currentDate: @escaping () -> Date = Date.init,
 		file: StaticString = #filePath,
 		line: UInt = #line
-	) -> (sut: LocalFeedLoader, store: FeedStore) {
-		let store = FeedStore()
+	) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
+		let store = FeedStoreSpy()
 		let sut = LocalFeedLoader(store: store, currentDate: currentDate)
 		trackForMemoryLeaks(store, file: file, line: line)
 		trackForMemoryLeaks(sut, file: file, line: line)
