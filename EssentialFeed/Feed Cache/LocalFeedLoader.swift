@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - LocalFeedLoader
 
-public final class LocalFeedLoader {
+public final class LocalFeedLoader: FeedLoader {
 	public typealias SaveResult = Error?
 	public typealias LoadResult = LoadFeedResult
 
