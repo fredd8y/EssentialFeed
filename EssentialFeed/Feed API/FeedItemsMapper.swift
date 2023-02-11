@@ -30,12 +30,3 @@ internal enum FeedItemsMapper {
 		let items: [RemoteFeedItem]
 	}
 }
-
-// MARK: - Item
-
-internal struct RemoteFeedItem: Equatable, Decodable {
-	internal let id: UUID
-	internal let description: String?
-	internal let location: String?
-	internal let image: URL
-}
