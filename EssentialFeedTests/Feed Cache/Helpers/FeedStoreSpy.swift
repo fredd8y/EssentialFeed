@@ -9,10 +9,6 @@ import EssentialFeed
 import Foundation
 
 class FeedStoreSpy: FeedStore {
-	typealias DeletionCompletion = (Error?) -> Void
-	typealias InsertionCompletion = (Error?) -> Void
-	typealias RetrievalCompletion = (Error?) -> Void
-
 	// MARK: Internal
 
 	enum ReceivedMessage: Equatable {
@@ -55,11 +51,15 @@ class FeedStoreSpy: FeedStore {
 	}
 	
 	func completeRetrieval(with error: Error, at index: Int = 0) {
-		retrievalCompletions[index](error)
+		retrievalCompletions[index](.failure(error))
 	}
 	
 	func completeRetrievalWithEmptyCache(at index: Int = 0) {
-		retrievalCompletions[index](nil)
+		retrievalCompletions[index](.empty)
+	}
+	
+	func completeRetrieval(with feed: [LocalFeedImage], timestamp: Date, at index: Int = 0) {
+		retrievalCompletions[index](.found(feed: feed, timestamp: timestamp))
 	}
 
 	// MARK: Private
