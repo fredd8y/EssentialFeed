@@ -57,6 +57,10 @@ class FeedStoreSpy: FeedStore {
 	func completeRetrieval(with error: Error, at index: Int = 0) {
 		retrievalCompletions[index](error)
 	}
+	
+	func completeRetrievalSuccessfully(with feed: [FeedImage], at index: Int = 0) {
+		retrievalCompletions[index](nil)
+	}
 
 	// MARK: Private
 

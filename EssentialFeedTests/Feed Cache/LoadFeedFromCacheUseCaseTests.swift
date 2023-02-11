@@ -9,6 +9,9 @@ import EssentialFeed
 import XCTest
 
 class LoadFeedFromCacheUseCaseTests: XCTestCase {
+	
+	
+	
 	// MARK: Internal
 
 	func test_init_doesNotMessageStoreUponCreation() {
@@ -32,8 +35,13 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
 		let retrievalError = anyNSError()
 		
 		var receivedError: Error?
-		sut.load() { error in
-			receivedError = error
+		sut.load() { result in
+			switch result {
+			case let .failure(error):
+				receivedError = error
+			default:
+				XCTFail("Expected failure got \(result) instead")
+			}
 			exp.fulfill()
 		}
 		
