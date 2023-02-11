@@ -54,9 +54,9 @@ public final class LocalFeedLoader {
 		store.retrieve { [weak self] result in
 			guard let self else { return }
 			switch result {
-			case .empty:
+			case .empty, .found:
 				break
-			default:
+			case .failure:
 				self.store.deleteCacheFeed { _ in }
 			}
 		}
