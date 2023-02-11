@@ -14,14 +14,14 @@ public final class LocalFeedLoader {
 	public typealias SaveResult = Error?
 	
 	// MARK: Lifecycle
-
+	
 	public init(store: FeedStore, currentDate: @escaping () -> Date) {
 		self.store = store
 		self.currentDate = currentDate
 	}
-
+	
 	// MARK: Public
-
+	
 	public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
 		store.deleteCacheFeed { [weak self] error in
 			guard let self else { return }
@@ -31,6 +31,10 @@ public final class LocalFeedLoader {
 				self.cache(feed, with: completion)
 			}
 		}
+	}
+	
+	public func load() {
+		store.retrieve()
 	}
 
 	// MARK: Private
