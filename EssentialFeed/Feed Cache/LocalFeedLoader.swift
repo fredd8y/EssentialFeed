@@ -10,8 +10,6 @@ import Foundation
 // MARK: - LocalFeedLoader
 
 public final class LocalFeedLoader: FeedLoader {
-	public typealias SaveResult = Error?
-	public typealias LoadResult = LoadFeedResult
 
 	// MARK: Lifecycle
 
@@ -39,6 +37,8 @@ public final class LocalFeedLoader: FeedLoader {
 }
 
 public extension LocalFeedLoader {
+	typealias SaveResult = Error?
+	
 	func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
 		store.deleteCacheFeed { [weak self] error in
 			guard let self else { return }
@@ -61,6 +61,8 @@ public extension LocalFeedLoader {
 }
 
 public extension LocalFeedLoader {
+	typealias LoadResult = LoadFeedResult
+	
 	func load(completion: @escaping (LoadResult) -> Void) {
 		store.retrieve { [weak self] result in
 			guard let self else { return }
