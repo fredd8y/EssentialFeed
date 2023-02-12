@@ -1,5 +1,5 @@
 //
-//  CodableFeedStoreCache.swift
+//  CodableFeedStoreTests.swift
 //  EssentialFeed
 //
 //  Created by Federico Arvat on 12/02/23.
@@ -78,19 +78,19 @@ class CodableFeedStore {
 
 // MARK: - CodableFeedStoreCache
 
-class CodableFeedStoreCache: XCTestCase {
+class CodableFeedStoreTests: XCTestCase {
 	// MARK: Internal
 
 	override func setUp() {
 		super.setUp()
 
-		try? FileManager.default.removeItem(at: storeURL())
+		try? FileManager.default.removeItem(at: testSpecificStoreURL())
 	}
 
 	override func tearDown() {
 		super.tearDown()
 
-		try? FileManager.default.removeItem(at: storeURL())
+		try? FileManager.default.removeItem(at: testSpecificStoreURL())
 	}
 
 	func test_retrieve_deliversEmptyOnEmptyCache() {
@@ -156,12 +156,12 @@ class CodableFeedStoreCache: XCTestCase {
 	// MARK: Private
 
 	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CodableFeedStore {
-		let sut = CodableFeedStore(storeURL: storeURL())
+		let sut = CodableFeedStore(storeURL: testSpecificStoreURL())
 		trackForMemoryLeaks(sut, file: file, line: line)
 		return sut
 	}
 	
-	private func storeURL() -> URL {
-		return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
+	private func testSpecificStoreURL() -> URL {
+		return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("\(type(of: self)).store")
 	}
 }
