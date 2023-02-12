@@ -76,7 +76,7 @@ class CodableFeedStore {
 	private let storeURL: URL
 }
 
-// MARK: - CodableFeedStoreCache
+// MARK: - CodableFeedStoreTests
 
 class CodableFeedStoreTests: XCTestCase {
 	// MARK: Internal
@@ -84,13 +84,13 @@ class CodableFeedStoreTests: XCTestCase {
 	override func setUp() {
 		super.setUp()
 
-		try? FileManager.default.removeItem(at: testSpecificStoreURL())
+		setupEmptyStoreState()
 	}
 
 	override func tearDown() {
 		super.tearDown()
 
-		try? FileManager.default.removeItem(at: testSpecificStoreURL())
+		undoStoresideEffects()
 	}
 
 	func test_retrieve_deliversEmptyOnEmptyCache() {
@@ -155,12 +155,24 @@ class CodableFeedStoreTests: XCTestCase {
 
 	// MARK: Private
 
+	private func setupEmptyStoreState() {
+		deleteStoreArtifacts()
+	}
+
+	private func undoStoresideEffects() {
+		deleteStoreArtifacts()
+	}
+
+	private func deleteStoreArtifacts() {
+		try? FileManager.default.removeItem(at: testSpecificStoreURL())
+	}
+	
 	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CodableFeedStore {
 		let sut = CodableFeedStore(storeURL: testSpecificStoreURL())
 		trackForMemoryLeaks(sut, file: file, line: line)
 		return sut
 	}
-	
+
 	private func testSpecificStoreURL() -> URL {
 		return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("\(type(of: self)).store")
 	}
