@@ -11,12 +11,6 @@ import XCTest
 // MARK: - CodableFeedStore
 
 class CodableFeedStore {
-	private let storeURL: URL
-	
-	init(storeURL: URL) {
-		self.storeURL = storeURL
-	}
-	
 	private struct Cache: Codable {
 		let feed: [CodableFeedImage]
 		let timestamp: Date
@@ -50,6 +44,12 @@ class CodableFeedStore {
 		private let url: URL
 	}
 
+	// MARK: Lifecycle
+
+	init(storeURL: URL) {
+		self.storeURL = storeURL
+	}
+
 	// MARK: Internal
 
 	func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
@@ -70,11 +70,17 @@ class CodableFeedStore {
 		try! encoded.write(to: storeURL)
 		completion(nil)
 	}
+
+	// MARK: Private
+
+	private let storeURL: URL
 }
 
 // MARK: - CodableFeedStoreCache
 
 class CodableFeedStoreCache: XCTestCase {
+	// MARK: Internal
+
 	override func setUp() {
 		super.setUp()
 
@@ -148,7 +154,9 @@ class CodableFeedStoreCache: XCTestCase {
 
 		wait(for: [exp], timeout: 1)
 	}
-	
+
+	// MARK: Private
+
 	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CodableFeedStore {
 		let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
 		let sut = CodableFeedStore(storeURL: storeURL)
