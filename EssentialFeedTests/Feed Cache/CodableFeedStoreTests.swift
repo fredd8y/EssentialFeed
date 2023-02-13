@@ -101,21 +101,8 @@ class CodableFeedStoreTests: XCTestCase {
 
 	func test_retrieve_hasNoSideEffectOnEmptyCache() {
 		let sut = makeSUT()
-		let exp = expectation(description: "Wait for cache retrieval")
 
-		sut.retrieve { firstResult in
-			sut.retrieve { secondResult in
-				switch (firstResult, secondResult) {
-				case (.empty, .empty):
-					break
-				default:
-					XCTFail("Expected retrieving twice from empty cache to deliver same empty result, got \(firstResult) and \(secondResult) instead")
-				}
-				exp.fulfill()
-			}
-		}
-
-		wait(for: [exp], timeout: 1)
+		expect(sut, toRetrieveTwice: .empty)
 	}
 
 	func test_retrieve_afterInsertingOnEmptyCache_deliversInsertedValues() {
@@ -141,25 +128,12 @@ class CodableFeedStoreTests: XCTestCase {
 		
 		sut.insert(feed, timestamp: timestamp) { insertionError in
 			XCTAssertNil(insertionError, "Expected feed to be inserted successfully")
-			
-			sut.retrieve { firstResult in
-				sut.retrieve { secondResult in
-					switch (firstResult, secondResult) {
-					case let (.found(firstFeed, firstTimestamp), .found(secondFeed, secondTimestamp)):
-						XCTAssertEqual(firstFeed, feed)
-						XCTAssertEqual(secondFeed, feed)
-						
-						XCTAssertEqual(firstTimestamp, timestamp)
-						XCTAssertEqual(secondTimestamp, timestamp)
-					default:
-						XCTFail("Expected retrieving twice from non empty cache to deliver same result with feed \(feed) and timestamp \(timestamp), got \(firstResult) and \(secondResult) instead")
-					}
-					exp.fulfill()
-				}
-			}
+			exp.fulfill()
 		}
 		
 		wait(for: [exp], timeout: 1)
+		
+		expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp))
 	}
 
 	// MARK: Private
@@ -181,6 +155,11 @@ class CodableFeedStoreTests: XCTestCase {
 		}
 		
 		wait(for: [exp], timeout: 1)
+	}
+	
+	private func expect(_ sut: CodableFeedStore, toRetrieveTwice expectedResult: RetrieveCachedFeedResult, file: StaticString = #file, line: UInt = #line) {
+		expect(sut, toRetrieve: expectedResult, file: file, line: line)
+		expect(sut, toRetrieve: expectedResult, file: file, line: line)
 	}
 
 	private func setupEmptyStoreState() {
