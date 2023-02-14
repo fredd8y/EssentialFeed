@@ -9,7 +9,7 @@ import CoreData
 
 public final class CoreDataFeedStore: FeedStore {
 	public func deleteCacheFeed(completion: @escaping DeletionCompletion) {
-		
+		completion(nil)
 	}
 	
 	public init(storeURL: URL, bundle: Bundle = .main) throws {
