@@ -37,6 +37,11 @@
 		7BCE5F26299C0E43009F40F4 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE5F25299C0E43009F40F4 /* ManagedFeedImage.swift */; };
 		7BCE5F2E299C0F4D009F40F4 /* EssentialFeedCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE5F2D299C0F4D009F40F4 /* EssentialFeedCacheIntegrationTests.swift */; };
 		7BCE5F2F299C0F4D009F40F4 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E3D4B298B1B890023E027 /* EssentialFeed.framework */; };
+		7BCE5F35299C104C009F40F4 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F2E50299196CA00776AB9 /* XCTestCase+MemoryLeakTracking.swift */; };
+		7BCE5F37299C111C009F40F4 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B120EB72995694200C9A911 /* CacheFeedUseCaseTests.swift */; };
+		7BCE5F38299C1129009F40F4 /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA332997E532009571DE /* FeedStoreSpy.swift */; };
+		7BCE5F39299C1133009F40F4 /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA3829980879009571DE /* FeedCacheTestHelpers.swift */; };
+		7BCE5F3A299C113D009F40F4 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA3B299809EA009571DE /* SharedTestHelpers.swift */; };
 		7BD0DA322997E426009571DE /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA312997E426009571DE /* LoadFeedFromCacheUseCaseTests.swift */; };
 		7BD0DA342997E532009571DE /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA332997E532009571DE /* FeedStoreSpy.swift */; };
 		7BD0DA3729980458009571DE /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0DA3629980458009571DE /* ValidateFeedCacheUseCaseTests.swift */; };
@@ -550,6 +555,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BCE5F2E299C0F4D009F40F4 /* EssentialFeedCacheIntegrationTests.swift in Sources */,
+				7BCE5F35299C104C009F40F4 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				7BCE5F3A299C113D009F40F4 /* SharedTestHelpers.swift in Sources */,
+				7BCE5F38299C1129009F40F4 /* FeedStoreSpy.swift in Sources */,
+				7BCE5F39299C1133009F40F4 /* FeedCacheTestHelpers.swift in Sources */,
+				7BCE5F37299C111C009F40F4 /* CacheFeedUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
