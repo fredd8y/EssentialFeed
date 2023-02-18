@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Clean Build Test
-      run: xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      run:
+      - xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI_macOS" CODE_SIGN_IDENTITY="" -sdk macosx -destination "platform=macOS" CODE_SIGNING_REQUIRED=NO
+      - xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI_iOS" CODE_SIGN_IDENTITY="" -sdk iphonesimulator -destination "platform=iOS Simulator, OS=16.0" CODE_SIGNING_REQUIRED=NO
