@@ -53,7 +53,7 @@
 		7BDA26FE298D8D280051D875 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA26FD298D8D280051D875 /* FeedItemsMapper.swift */; };
 		7BDA2701298EB5C20051D875 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA2700298EB5C20051D875 /* URLSessionHTTPClientTests.swift */; };
 		7BE4D31229A13B3300542071 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE4D30A29A13B3200542071 /* EssentialFeediOS.framework */; };
-		7BE4D31729A13B3300542071 /* EssentialFeediOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4D31629A13B3300542071 /* EssentialFeediOSTests.swift */; };
+		7BE4D32329A1419E00542071 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4D32129A1419C00542071 /* FeedViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +130,7 @@
 		7BDA2700298EB5C20051D875 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		7BE4D30A29A13B3200542071 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE4D31129A13B3300542071 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BE4D31629A13B3300542071 /* EssentialFeediOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeediOSTests.swift; sourceTree = "<group>"; };
+		7BE4D32129A1419C00542071 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,7 +371,7 @@
 		7BE4D31529A13B3300542071 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				7BE4D31629A13B3300542071 /* EssentialFeediOSTests.swift */,
+				7BE4D32129A1419C00542071 /* FeedViewControllerTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -530,6 +530,7 @@
 					};
 					7BE4D30929A13B3200542071 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					7BE4D31029A13B3300542071 = {
 						CreatedOnToolsVersion = 14.2;
@@ -685,7 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BE4D31729A13B3300542071 /* EssentialFeediOSTests.swift in Sources */,
+				7BE4D32329A1419E00542071 /* FeedViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1003,7 @@
 		7BE4D31A29A13B3300542071 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1024,6 +1026,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1032,6 +1035,7 @@
 		7BE4D31B29A13B3300542071 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
