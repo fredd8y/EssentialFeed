@@ -10,8 +10,8 @@ import UIKit
 final class FeedRefreshViewController: NSObject, FeedLoadingView {
 	// MARK: Lifecycle
 
-	init(presenter: FeedPresenter) {
-		self.presenter = presenter
+	init(loadFeed: @escaping () -> Void) {
+		self.loadFeed = loadFeed
 	}
 
 	// MARK: Internal
@@ -28,12 +28,12 @@ final class FeedRefreshViewController: NSObject, FeedLoadingView {
 
 	@objc
 	func refresh() {
-		presenter.loadFeed()
+		loadFeed()
 	}
 
 	// MARK: Private
 
-	private let presenter: FeedPresenter
+	private let loadFeed: () -> Void
 
 	private func loadView() -> UIRefreshControl {
 		let view = UIRefreshControl()
