@@ -70,6 +70,9 @@ Location</string>
                                                             <state key="normal">
                                                                 <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="Kf0-iD-1n0" eventType="touchUpInside" id="o9O-Uv-T0m"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,6 +114,14 @@ Location</string>
                                         <constraint firstItem="ci7-3W-ODo" firstAttribute="top" secondItem="EZS-tP-gQ7" secondAttribute="topMargin" priority="999" constant="8" id="qyL-IZ-Hcv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="Mvv-p7-Qcc" id="XZJ-IL-ATc"/>
+                                    <outlet property="feedImageContainer" destination="TRw-Dp-vfS" id="Hjk-xC-pnr"/>
+                                    <outlet property="feedImageRetryButton" destination="SUc-jE-01m" id="SRu-GH-M38"/>
+                                    <outlet property="feedImageView" destination="NoQ-rM-QgU" id="tRm-gn-sUt"/>
+                                    <outlet property="locationContainer" destination="mIV-Kj-06B" id="smy-Lz-ubm"/>
+                                    <outlet property="locationLabel" destination="aMi-xG-oUK" id="18I-0c-PpS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
