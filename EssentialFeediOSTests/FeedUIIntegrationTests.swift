@@ -1,5 +1,5 @@
 //
-//  FeedViewControllerTests.swift
+//  FeedUIIntegrationTests.swift
 //  EssentialFeediOS
 //
 //  Created by Federico Arvat on 18/02/23.
@@ -12,7 +12,7 @@ import XCTest
 
 // MARK: - FeedViewControllerTests
 
-final class FeedViewControllerTests: XCTestCase {
+final class FeedUIIntegrationTests: XCTestCase {
 	// MARK: Internal
 
 	class LoaderSpy: FeedLoader, FeedImageDataLoader {
@@ -75,7 +75,7 @@ final class FeedViewControllerTests: XCTestCase {
 		
 		sut.loadViewIfNeeded()
 		
-		XCTAssertEqual(sut.title, "My Feed")
+		XCTAssertEqual(sut.title, localized("FEED_VIEW_TITLE"))
 	}
 
 	
