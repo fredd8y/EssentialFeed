@@ -1,15 +1,12 @@
 //
-//  ErrorView.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 26/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit
 
 public final class ErrorView: UIView {
 	@IBOutlet private var label: UILabel!
-	
+
 	public var message: String? {
 		get { return isVisible ? label.text : nil }
 		set { setMessageAnimated(newValue) }
@@ -33,7 +30,7 @@ public final class ErrorView: UIView {
 			hideMessageAnimated()
 		}
 	}
-	
+
 	private func showAnimated(_ message: String) {
 		label.text = message
 		

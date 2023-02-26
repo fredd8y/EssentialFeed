@@ -1,51 +1,40 @@
 //
-//  FeedViewController.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 19/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit
+import EssentialFeed
 
 protocol FeedViewControllerDelegate {
 	func didRequestFeedRefresh()
 }
 
-final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
-	
-	@IBOutlet private(set) public var errorView: ErrorView?
-	
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
 	var delegate: FeedViewControllerDelegate?
-	
+	@IBOutlet private(set) public var errorView: ErrorView?
+
 	var tableModel = [FeedImageCellController]() {
-		didSet {
-			tableView.reloadData()
-		}
+		didSet { tableView.reloadData() }
 	}
-	
-	func display(_ viewModel: FeedLoadingViewModel) {
-		if viewModel.isLoading {
-			refreshControl?.beginRefreshing()
-		} else {
-			refreshControl?.endRefreshing()
-		}
-		refreshControl?.update(isRefreshing: viewModel.isLoading)
-	}
-	
-	func display(_ viewModel: FeedErrorViewModel) {
-		errorView?.message = viewModel.message
-	}
-	
-	@IBAction private func refresh() {
-		delegate?.didRequestFeedRefresh()
-	}
-	
+
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		refresh()
 	}
 	
+	@IBAction private func refresh() {
+		delegate?.didRequestFeedRefresh()
+	}
+	
+	public func display(_ viewModel: FeedLoadingViewModel) {
+		refreshControl?.update(isRefreshing: viewModel.isLoading)
+	}
+	
+	public func display(_ viewModel: FeedErrorViewModel) {
+		errorView?.message = viewModel.message
+	}
+
 	public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return tableModel.count
 	}
@@ -65,9 +54,7 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
 	}
 	
 	public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-		indexPaths.forEach { indexPath in
-			cancelCellControllerLoad(forRowAt: indexPath)
-		}
+		indexPaths.forEach(cancelCellControllerLoad)
 	}
 	
 	private func cellController(forRowAt indexPath: IndexPath) -> FeedImageCellController {

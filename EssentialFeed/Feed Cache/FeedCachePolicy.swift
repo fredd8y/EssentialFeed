@@ -1,16 +1,11 @@
 //
-//  FeedCachePolicy.swift
-//  EssentialFeed
-//
-//  Created by Federico Arvat on 12/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import Foundation
 
-// MARK: - FeedCachePolicy
-
-enum FeedCachePolicy {
-	// MARK: Private
+final class FeedCachePolicy {
+	private init() {}
 	
 	private static let calendar = Calendar(identifier: .gregorian)
 	

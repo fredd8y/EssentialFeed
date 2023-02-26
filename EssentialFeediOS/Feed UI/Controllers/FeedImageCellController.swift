@@ -1,8 +1,5 @@
 //
-//  FeedImageCellController.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 21/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit
@@ -13,11 +10,10 @@ protocol FeedImageCellControllerDelegate {
 	func didCancelImageRequest()
 }
 
-
 final class FeedImageCellController: FeedImageView {
 	private let delegate: FeedImageCellControllerDelegate
 	private var cell: FeedImageCell?
-		
+	
 	init(delegate: FeedImageCellControllerDelegate) {
 		self.delegate = delegate
 	}
@@ -37,10 +33,6 @@ final class FeedImageCellController: FeedImageView {
 		delegate.didCancelImageRequest()
 	}
 	
-	private func releaseCellForReuse() {
-		cell = nil
-	}
-	
 	func display(_ viewModel: FeedImageViewModel<UIImage>) {
 		cell?.locationContainer.isHidden = !viewModel.hasLocation
 		cell?.locationLabel.text = viewModel.location
@@ -50,5 +42,8 @@ final class FeedImageCellController: FeedImageView {
 		cell?.feedImageRetryButton.isHidden = !viewModel.shouldRetry
 		cell?.onRetry = delegate.didRequestImage
 	}
-
+	
+	private func releaseCellForReuse() {
+		cell = nil
+	}
 }

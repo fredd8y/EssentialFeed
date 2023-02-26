@@ -1,8 +1,5 @@
 //
-//  XCTestCase+FailableInsertFeedStoreSpecs.swift
-//  EssentialFeedTests
-//
-//  Created by Federico Arvat on 13/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -18,6 +15,6 @@ extension FailableInsertFeedStoreSpecs where Self: XCTestCase {
 	func assertThatInsertHasNoSideEffectsOnInsertionError(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
 		insert((uniqueImageFeed().local, Date()), to: sut)
 		
-		expect(sut, toRetrieve: .empty, file: file, line: line)
+		expect(sut, toRetrieve: .success(.none), file: file, line: line)
 	}
 }

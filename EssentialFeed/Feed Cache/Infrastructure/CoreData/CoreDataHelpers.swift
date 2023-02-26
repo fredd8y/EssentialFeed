@@ -1,8 +1,5 @@
 //
-//  CoreDataHelpers.swift
-//  EssentialFeed
-//
-//  Created by Federico Arvat on 14/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import CoreData
@@ -30,7 +27,7 @@ extension NSPersistentContainer {
 	}
 }
 
-extension NSManagedObjectModel {
+private extension NSManagedObjectModel {
 	static func with(name: String, in bundle: Bundle) -> NSManagedObjectModel? {
 		return bundle
 			.url(forResource: name, withExtension: "momd")

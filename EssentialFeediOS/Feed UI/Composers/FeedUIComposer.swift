@@ -1,28 +1,21 @@
 //
-//  FeedUIComposer.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 21/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
-import EssentialFeed
 import UIKit
-
-// MARK: - FeedUIComposer
+import EssentialFeed
 
 public final class FeedUIComposer {
-	// MARK: Lifecycle
-
 	private init() {}
-
-	// MARK: Public
-
+	
 	public static func feedComposedWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
 		let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader:
-																	MainQueueDispatchDecorator(decoratee: feedLoader))
+			MainQueueDispatchDecorator(decoratee: feedLoader))
 		
-		let feedController = makeFeedViewController(delegate: presentationAdapter, title: FeedPresenter.title)
-		
+		let feedController = makeFeedViewController(
+			delegate: presentationAdapter,
+			title: FeedPresenter.title)
+
 		presentationAdapter.presenter = FeedPresenter(
 			feedView: FeedViewAdapter(
 				controller: feedController,
@@ -32,7 +25,7 @@ public final class FeedUIComposer {
 		
 		return feedController
 	}
-	
+
 	private static func makeFeedViewController(delegate: FeedViewControllerDelegate, title: String) -> FeedViewController {
 		let bundle = Bundle(for: FeedViewController.self)
 		let storyboard = UIStoryboard(name: "Feed", bundle: bundle)

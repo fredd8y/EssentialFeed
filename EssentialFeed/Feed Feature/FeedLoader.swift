@@ -1,12 +1,8 @@
 //
-//  FeedLoader.swift
-//  EssentialFeed
-//
-//  Created by Federico Arvat on 01/02/23.
+//  Copyright © 2018 Essential Developer. All rights reserved.
 //
 
 import Foundation
-
 
 public protocol FeedLoader {
 	typealias Result = Swift.Result<[FeedImage], Error>

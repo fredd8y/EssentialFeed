@@ -1,8 +1,5 @@
 //
-//  UIRefreshControl+Helpers.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 26/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit

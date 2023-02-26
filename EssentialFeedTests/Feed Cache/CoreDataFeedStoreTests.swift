@@ -1,8 +1,5 @@
 //
-//  CoreDataFeedStoreTests.swift
-//  EssentialFeedTests
-//
-//  Created by Federico Arvat on 14/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -81,8 +78,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
 		
 		assertThatSideEffectsRunSerially(on: sut)
 	}
-	
-	// MARK: - Helpers
+
+	// - MARK: Helpers
 	
 	private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
 		let storeBundle = Bundle(for: CoreDataFeedStore.self)
@@ -91,5 +88,5 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
 		trackForMemoryLeaks(sut, file: file, line: line)
 		return sut
 	}
-	
+
 }

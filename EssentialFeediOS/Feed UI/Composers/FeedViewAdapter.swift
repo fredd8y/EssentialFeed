@@ -1,8 +1,5 @@
 //
-//  FeedViewAdapter.swift
-//  EssentialFeediOS
-//
-//  Created by Federico Arvat on 23/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit

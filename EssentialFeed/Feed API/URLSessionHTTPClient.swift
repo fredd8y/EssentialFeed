@@ -1,38 +1,29 @@
 //
-//  URLSessionHTTPClient.swift
-//  EssentialFeed
-//
-//  Created by Federico Arvat on 07/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import Foundation
 
-// MARK: - URLSessionHTTPClient
-
 public class URLSessionHTTPClient: HTTPClient {
-	private struct UnexpectedValuesRepresentation: Error {}
-
-	// MARK: Lifecycle
-
+	private let session: URLSession
+	
 	public init(session: URLSession = .shared) {
 		self.session = session
 	}
-
-	// MARK: Public
-
+	
+	private struct UnexpectedValuesRepresentation: Error {}
+	
 	public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
-		session.dataTask(with: url, completionHandler: { data, response, error in
-			if let error = error {
-				completion(.failure(error))
-			} else if let data, let response = response as? HTTPURLResponse {
-				completion(.success((data, response)))
-			} else {
-				completion(.failure(UnexpectedValuesRepresentation()))
-			}
-		}).resume()
+		session.dataTask(with: url) { data, response, error in
+			completion(Result {
+				if let error = error {
+					throw error
+				} else if let data = data, let response = response as? HTTPURLResponse {
+					return (data, response)
+				} else {
+					throw UnexpectedValuesRepresentation()
+				}
+			})
+		}.resume()
 	}
-
-	// MARK: Private
-
-	private let session: URLSession
 }

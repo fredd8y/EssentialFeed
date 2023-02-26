@@ -1,8 +1,5 @@
 //
-//  ManagedFeedImage.swift
-//  EssentialFeed
-//
-//  Created by Federico Arvat on 14/02/23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import CoreData
