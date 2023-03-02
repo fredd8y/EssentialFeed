@@ -27,6 +27,9 @@
 		7B7E1A7F29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A7E29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift */; };
 		7B7E1A8129B1204A001AB03A /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8029B1204A001AB03A /* FeedLoaderStub.swift */; };
 		7B7E1A8529B1208A001AB03A /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8429B1208A001AB03A /* XCTestCase+FeedLoader.swift */; };
+		7B7E1A8B29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8A29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift */; };
+		7B7E1A8E29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8C29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift */; };
+		7B7E1A8F29B12648001AB03A /* EssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8D29B12648001AB03A /* EssentialAppUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		7B7E1A7E29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		7B7E1A8029B1204A001AB03A /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		7B7E1A8429B1208A001AB03A /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
+		7B7E1A8A29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
+		7B7E1A8C29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B7E1A8D29B12648001AB03A /* EssentialAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialAppUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 				7B65C20329AE7B9B00C267F1 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				7B65C20529AE7BB000C267F1 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				7B7E1A7E29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift */,
+				7B7E1A8A29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 		7B65C1DF29AD2A5400C267F1 /* EssentialAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7B7E1A8D29B12648001AB03A /* EssentialAppUITests.swift */,
+				7B7E1A8C29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift */,
 			);
 			path = EssentialAppUITests;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 					};
 					7B65C1DB29AD2A5400C267F1 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 						TestTargetID = 7B65C1BB29AD2A5300C267F1;
 					};
 				};
@@ -338,6 +348,7 @@
 				7B65C20629AE7BB000C267F1 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				7B7E1A7F29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				7B7E1A8529B1208A001AB03A /* XCTestCase+FeedLoader.swift in Sources */,
+				7B7E1A8B29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift in Sources */,
 				7B65C20B29AE7BDA00C267F1 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				7B65C20429AE7B9B00C267F1 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				7B7E1A8129B1204A001AB03A /* FeedLoaderStub.swift in Sources */,
@@ -349,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7E1A8F29B12648001AB03A /* EssentialAppUITests.swift in Sources */,
+				7B7E1A8E29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,14 +633,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYXPW2Z6TM;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.it.EssentialAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EssentialApp;
@@ -638,10 +658,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYXPW2Z6TM;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.it.EssentialAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
