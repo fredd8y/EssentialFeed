@@ -35,8 +35,21 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 				break
 			}
 		}
+	}
+	
+	func test_loadImageData_deliversErrorOnLoadError() {
+		let error = anyNSError()
+		let loader = FeedImageDataLoaderStub(result: .failure(error))
+		let sut = FeedImageLoaderCacheDecorator(decoratee: loader)
 		
-		
+		_ = sut.loadImageData(from: anyURL()) { result in
+			switch result {
+			case let .failure(retrievedError):
+				XCTAssertEqual(error, retrievedError as NSError)
+			default:
+				break
+			}
+		}
 	}
 	
 	class FeedImageDataLoaderStub: FeedImageDataLoader {
