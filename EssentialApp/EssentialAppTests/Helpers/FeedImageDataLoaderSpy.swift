@@ -11,9 +11,9 @@ import EssentialFeed
 class FeedImageDataLoaderSpy: FeedImageDataLoader {
 	private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
 	
-	private(set) var cancelledURls = [URL]()
+	public private(set) var cancelledURLs = [URL]()
 	
-	var loadedUrl: [URL] {
+	public var loadedURLs: [URL] {
 		return messages.map { $0.url }
 	}
 	
@@ -25,7 +25,7 @@ class FeedImageDataLoaderSpy: FeedImageDataLoader {
 	func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
 		messages.append((url, completion))
 		return Task { [weak self] in
-			self?.cancelledURls.append(url)
+			self?.cancelledURLs.append(url)
 		}
 	}
 	

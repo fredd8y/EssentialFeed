@@ -1,5 +1,5 @@
 //
-//  FeedImageLoaderCacheDecorator.swift
+//  FeedImageDataLoaderCacheDecorator.swift
 //  EssentialApp
 //
 //  Created by Federico Arvat on 04/03/23.
@@ -8,11 +8,11 @@
 import Foundation
 import EssentialFeed
 
-public class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
+public class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
 	private let decoratee: FeedImageDataLoader
-	private let cache: FeedImageCache
+	private let cache: FeedImageDataCache
 	
-	public init(decoratee: FeedImageDataLoader, cache: FeedImageCache) {
+	public init(decoratee: FeedImageDataLoader, cache: FeedImageDataCache) {
 		self.decoratee = decoratee
 		self.cache = cache
 	}
@@ -32,7 +32,7 @@ public class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 	}
 }
 
-private extension FeedImageLoaderCacheDecorator {
+private extension FeedImageDataLoaderCacheDecorator {
 	func saveIgnoringResult(_ data: Data, for url: URL) {
 		self.cache.save(data, for: url) { _ in }
 	}

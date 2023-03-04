@@ -1,5 +1,5 @@
 //
-//  FeedImageCache.swift
+//  FeedImageDataCache.swift
 //  EssentialFeed
 //
 //  Created by Federico Arvat on 04/03/23.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol FeedImageCache {
+public protocol FeedImageDataCache {
 	typealias SaveResult = Result<Void, Error>
 	
 	func save(_ data: Data, for url: URL, completion: @escaping (SaveResult) -> Void)

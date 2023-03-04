@@ -8,7 +8,7 @@
 import Foundation
 import EssentialFeed
 
-class FeedImageCacheSpy: FeedImageCache {
+class FeedImageCacheSpy: FeedImageDataCache {
 	private(set) var messages = [Message]()
 	
 	enum Message: Equatable {
