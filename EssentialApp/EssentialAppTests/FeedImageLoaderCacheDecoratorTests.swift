@@ -40,11 +40,18 @@ class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 
 class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 	
+	private func makeSUT(withResult result: FeedImageDataLoader.Result, cache: FeedImageCache) -> FeedImageLoaderCacheDecorator {
+		let loader = FeedImageDataLoaderStub(result: result)
+		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		trackForMemoryLeaks(loader)
+		trackForMemoryLeaks(sut)
+		return sut
+	}
+	
 	func test_loadImageData_deliversImageOnLoaderSuccess() {
 		let data = anyData()
 		let cache = FeedImageCacheSpy()
-		let loader = FeedImageDataLoaderStub(result: .success(data))
-		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		let sut = makeSUT(withResult: .success(data), cache: cache)
 		
 		_ = sut.loadImageData(from: anyURL()) { result in
 			switch result {
@@ -59,8 +66,7 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 	func test_loadImageData_deliversErrorOnLoaderError() {
 		let error = anyNSError()
 		let cache = FeedImageCacheSpy()
-		let loader = FeedImageDataLoaderStub(result: .failure(error))
-		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		let sut = makeSUT(withResult: .failure(error), cache: cache)
 		
 		_ = sut.loadImageData(from: anyURL()) { result in
 			switch result {
@@ -75,8 +81,7 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 	func test_loadImageData_cachesLoadedFeedOnLoaderSuccess() {
 		let data = anyData()
 		let cache = FeedImageCacheSpy()
-		let loader = FeedImageDataLoaderStub(result: .success(data))
-		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		let sut = makeSUT(withResult: .success(data), cache: cache)
 		
 		_ = sut.loadImageData(from: anyURL()) { result in
 			switch result {
@@ -91,8 +96,7 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 	func test_loadImageData_doesNotCachesLoadedFeedOnLoaderError() {
 		let error = anyNSError()
 		let cache = FeedImageCacheSpy()
-		let loader = FeedImageDataLoaderStub(result: .failure(error))
-		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		let sut = makeSUT(withResult: .failure(error), cache: cache)
 		
 		_ = sut.loadImageData(from: anyURL()) { result in
 			switch result {
