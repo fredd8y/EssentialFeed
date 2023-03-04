@@ -38,9 +38,9 @@ class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 	}
 }
 
-class FeedImageLoaderCacheDecoratorTests: XCTestCase {
+class FeedImageLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase {
 	
-	private func makeSUT(withResult result: FeedImageDataLoader.Result, cache: FeedImageCache) -> FeedImageLoaderCacheDecorator {
+	private func makeSUT(withResult result: FeedImageDataLoader.Result, cache: FeedImageCacheSpy = .init()) -> FeedImageLoaderCacheDecorator {
 		let loader = FeedImageDataLoaderStub(result: result)
 		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
 		trackForMemoryLeaks(loader)
@@ -50,32 +50,16 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 	
 	func test_loadImageData_deliversImageOnLoaderSuccess() {
 		let data = anyData()
-		let cache = FeedImageCacheSpy()
-		let sut = makeSUT(withResult: .success(data), cache: cache)
+		let sut = makeSUT(withResult: .success(data))
 		
-		_ = sut.loadImageData(from: anyURL()) { result in
-			switch result {
-			case let .success(retrievedData):
-				XCTAssertEqual(data, retrievedData)
-			default:
-				break
-			}
-		}
+		expect(sut: sut, toCompleteWith: .success(data))
 	}
 	
 	func test_loadImageData_deliversErrorOnLoaderError() {
 		let error = anyNSError()
-		let cache = FeedImageCacheSpy()
-		let sut = makeSUT(withResult: .failure(error), cache: cache)
+		let sut = makeSUT(withResult: .failure(error))
 		
-		_ = sut.loadImageData(from: anyURL()) { result in
-			switch result {
-			case let .failure(retrievedError):
-				XCTAssertEqual(error, retrievedError as NSError)
-			default:
-				break
-			}
-		}
+		expect(sut: sut, toCompleteWith: .failure(error))
 	}
 	
 	func test_loadImageData_cachesLoadedFeedOnLoaderSuccess() {
@@ -83,14 +67,9 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 		let cache = FeedImageCacheSpy()
 		let sut = makeSUT(withResult: .success(data), cache: cache)
 		
-		_ = sut.loadImageData(from: anyURL()) { result in
-			switch result {
-			case let .success(retrievedData):
-				XCTAssertEqual(cache.messages, [.save(retrievedData)])
-			default:
-				break
-			}
-		}
+		_ = sut.loadImageData(from: anyURL()) { _ in }
+		
+		XCTAssertEqual(cache.messages, [.save(data)])
 	}
 	
 	func test_loadImageData_doesNotCachesLoadedFeedOnLoaderError() {
@@ -98,14 +77,9 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 		let cache = FeedImageCacheSpy()
 		let sut = makeSUT(withResult: .failure(error), cache: cache)
 		
-		_ = sut.loadImageData(from: anyURL()) { result in
-			switch result {
-			case .failure:
-				XCTAssertEqual(cache.messages, [])
-			default:
-				break
-			}
-		}
+		_ = sut.loadImageData(from: anyURL()) { _ in }
+		
+		XCTAssertEqual(cache.messages, [])
 	}
 	
 	private class FeedImageCacheSpy: FeedImageCache {
@@ -119,25 +93,5 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 			messages.append(.save(data))
 		}
 	}
-	
-	class FeedImageDataLoaderStub: FeedImageDataLoader {
-		let result: FeedImageDataLoader.Result
-		
-		init(result: FeedImageDataLoader.Result) {
-			self.result = result
-		}
-		
-		func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-			let task = FeedImageDataLoaderTaskStub()
-			
-			completion(result)
-			
-			return task
-		}
-	}
-	
-	class FeedImageDataLoaderTaskStub: FeedImageDataLoaderTask {
-		func cancel() {}
-	}
-	
+
 }

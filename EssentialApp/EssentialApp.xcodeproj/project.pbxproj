@@ -30,6 +30,9 @@
 		7B7E1A8B29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8A29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift */; };
 		7B7E1A8E29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8C29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift */; };
 		7B7E1A8F29B12648001AB03A /* EssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8D29B12648001AB03A /* EssentialAppUITests.swift */; };
+		7B9501F229B38CB600D707D6 /* FeedImageDataLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F129B38CB600D707D6 /* FeedImageDataLoaderStub.swift */; };
+		7B9501F429B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F329B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift */; };
+		7B9501F629B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F529B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		7B7E1A8A29B12195001AB03A /* FeedImageLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		7B7E1A8C29B12648001AB03A /* EssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7B7E1A8D29B12648001AB03A /* EssentialAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialAppUITests.swift; sourceTree = "<group>"; };
+		7B9501F129B38CB600D707D6 /* FeedImageDataLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderStub.swift; sourceTree = "<group>"; };
+		7B9501F329B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderTaskStub.swift; sourceTree = "<group>"; };
+		7B9501F529B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +196,13 @@
 		7B65C20729AE7BC400C267F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7B65C20829AE7BCB00C267F1 /* SharedTestHelpers.swift */,
-				7B65C20A29AE7BDA00C267F1 /* XCTestCase+MemoryLeakTracking.swift */,
+				7B9501F129B38CB600D707D6 /* FeedImageDataLoaderStub.swift */,
+				7B9501F329B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift */,
 				7B7E1A8029B1204A001AB03A /* FeedLoaderStub.swift */,
+				7B65C20829AE7BCB00C267F1 /* SharedTestHelpers.swift */,
+				7B9501F529B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift */,
 				7B7E1A8429B1208A001AB03A /* XCTestCase+FeedLoader.swift */,
+				7B65C20A29AE7BDA00C267F1 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9501F229B38CB600D707D6 /* FeedImageDataLoaderStub.swift in Sources */,
 				7B65C20629AE7BB000C267F1 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				7B7E1A7F29B11FEE001AB03A /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				7B7E1A8529B1208A001AB03A /* XCTestCase+FeedLoader.swift in Sources */,
@@ -353,6 +363,8 @@
 				7B65C20429AE7B9B00C267F1 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				7B7E1A8129B1204A001AB03A /* FeedLoaderStub.swift in Sources */,
 				7B65C20929AE7BCB00C267F1 /* SharedTestHelpers.swift in Sources */,
+				7B9501F429B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift in Sources */,
+				7B9501F629B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
