@@ -8,12 +8,6 @@
 import Foundation
 import EssentialFeed
 
-public protocol FeedImageCache {
-	typealias SaveResult = Result<Void, Error>
-	
-	func save(_ data: Data, for url: URL, completion: @escaping (SaveResult) -> Void)
-}
-
 public class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 	private let decoratee: FeedImageDataLoader
 	private let cache: FeedImageCache
