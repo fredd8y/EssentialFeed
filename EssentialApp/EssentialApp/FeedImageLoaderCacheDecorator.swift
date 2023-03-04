@@ -22,12 +22,18 @@ public class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 			guard let self else { return }
 			switch result {
 			case let .success(data):
-				self.cache.save(data, for: url) { _ in }
+				self.saveIgnoringResult(data, for: url)
 				completion(.success(data))
 			case let .failure(error):
 				completion(.failure(error))
 			}
 		}
 		return task
+	}
+}
+
+private extension FeedImageLoaderCacheDecorator {
+	func saveIgnoringResult(_ data: Data, for url: URL) {
+		self.cache.save(data, for: url) { _ in }
 	}
 }
