@@ -20,12 +20,9 @@ public class FeedImageLoaderCacheDecorator: FeedImageDataLoader {
 	public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
 		let task = decoratee.loadImageData(from: url) { [weak self] result in
 			guard let self else { return }
-			switch result {
-			case let .success(data):
+			if let data = try? result.get() {
 				self.saveIgnoringResult(data, for: url)
 				completion(.success(data))
-			case let .failure(error):
-				completion(.failure(error))
 			}
 		}
 		return task
