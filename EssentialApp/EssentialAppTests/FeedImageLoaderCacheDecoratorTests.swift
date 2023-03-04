@@ -88,6 +88,22 @@ class FeedImageLoaderCacheDecoratorTests: XCTestCase {
 		}
 	}
 	
+	func test_loadImageData_doesNotCachesLoadedFeedOnLoaderError() {
+		let error = anyNSError()
+		let cache = FeedImageCacheSpy()
+		let loader = FeedImageDataLoaderStub(result: .failure(error))
+		let sut = FeedImageLoaderCacheDecorator(decoratee: loader, cache: cache)
+		
+		_ = sut.loadImageData(from: anyURL()) { result in
+			switch result {
+			case .failure:
+				XCTAssertEqual(cache.messages, [])
+			default:
+				break
+			}
+		}
+	}
+	
 	private class FeedImageCacheSpy: FeedImageCache {
 		private(set) var messages = [Message]()
 		
