@@ -34,6 +34,7 @@
 		7B9501F629B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F529B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift */; };
 		7B9501F829B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F729B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift */; };
 		7B9501FC29B39FDA00D707D6 /* FeedImageCacheSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501FB29B39FDA00D707D6 /* FeedImageCacheSpy.swift */; };
+		7B9501FE29B4DBE200D707D6 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501FD29B4DBE200D707D6 /* DebuggingSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		7B9501F529B38D2A00D707D6 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		7B9501F729B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		7B9501FB29B39FDA00D707D6 /* FeedImageCacheSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCacheSpy.swift; sourceTree = "<group>"; };
+		7B9501FD29B4DBE200D707D6 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,17 +153,18 @@
 		7B65C1BE29AD2A5300C267F1 /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
+				7B65C1CD29AD2A5300C267F1 /* Info.plist */,
 				7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */,
+				7B9501FD29B4DBE200D707D6 /* DebuggingSceneDelegate.swift */,
+				7B9501F729B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift */,
+				7B65C1FF29AE7B5D00C267F1 /* FeedImageDataLoaderWithFallbackComposite.swift */,
+				7B7E1A7C29B11FD3001AB03A /* FeedLoaderCacheDecorator.swift */,
+				7B65C20129AE7B7600C267F1 /* FeedLoaderWithFallbackComposite.swift */,
 				7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */,
 				7B65C1C329AD2A5300C267F1 /* ViewController.swift */,
-				7B65C1C529AD2A5300C267F1 /* Main.storyboard */,
 				7B65C1C829AD2A5300C267F1 /* Assets.xcassets */,
 				7B65C1CA29AD2A5300C267F1 /* LaunchScreen.storyboard */,
-				7B65C1CD29AD2A5300C267F1 /* Info.plist */,
-				7B65C1FF29AE7B5D00C267F1 /* FeedImageDataLoaderWithFallbackComposite.swift */,
-				7B65C20129AE7B7600C267F1 /* FeedLoaderWithFallbackComposite.swift */,
-				7B7E1A7C29B11FD3001AB03A /* FeedLoaderCacheDecorator.swift */,
-				7B9501F729B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift */,
+				7B65C1C529AD2A5300C267F1 /* Main.storyboard */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				7B65C1C429AD2A5300C267F1 /* ViewController.swift in Sources */,
 				7B65C20229AE7B7600C267F1 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				7B7E1A7D29B11FD3001AB03A /* FeedLoaderCacheDecorator.swift in Sources */,
+				7B9501FE29B4DBE200D707D6 /* DebuggingSceneDelegate.swift in Sources */,
 				7B65C1C029AD2A5300C267F1 /* AppDelegate.swift in Sources */,
 				7B65C1C229AD2A5300C267F1 /* SceneDelegate.swift in Sources */,
 				7B9501F829B38E0400D707D6 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,

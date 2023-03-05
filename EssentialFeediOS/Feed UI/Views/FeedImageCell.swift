@@ -5,6 +5,14 @@
 import UIKit
 
 public final class FeedImageCell: UITableViewCell {
+	
+	public override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		accessibilityIdentifier = "feed-image-cell"
+		feedImageView.accessibilityIdentifier = "feed-image-view"
+	}
+	
 	@IBOutlet private(set) public var locationContainer: UIView!
 	@IBOutlet private(set) public var locationLabel: UILabel!
 	@IBOutlet private(set) public var feedImageContainer: UIView!
