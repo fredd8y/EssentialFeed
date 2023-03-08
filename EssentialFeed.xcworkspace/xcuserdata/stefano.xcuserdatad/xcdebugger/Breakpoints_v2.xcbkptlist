@@ -3,4 +3,54 @@
    uuid = "EA96D9CB-E892-450B-9E45-783990C75ECF"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2F58DAE-FE24-450C-9053-A7B4328D52E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeed/Feed Cache/LocalFeedImageDataLoader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "loadImageData(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2F58DAE-FE24-450C-9053-A7B4328D52E4 - f485b96aaf4e118e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; Swift.Result&lt;Foundation.Data, Swift.Error&gt; in closure #1 (Swift.Result&lt;Swift.Optional&lt;Foundation.Data&gt;, Swift.Error&gt;) -&gt; () in EssentialFeed.LocalFeedImageDataLoader.loadImageData(from: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.FeedImageDataLoaderTask"
+                  moduleName = "EssentialFeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stefano/Documents/iOS%20Lead%20Essential/EssentialFeed/EssentialFeed/Feed%20Cache/LocalFeedImageDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "F2F58DAE-FE24-450C-9053-A7B4328D52E4 - 1fec9995b836a72e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data) -&gt; Swift.Result&lt;Foundation.Data, Swift.Error&gt; in closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; Swift.Result&lt;Foundation.Data, Swift.Error&gt; in closure #1 (Swift.Result&lt;Swift.Optional&lt;Foundation.Data&gt;, Swift.Error&gt;) -&gt; () in EssentialFeed.LocalFeedImageDataLoader.loadImageData(from: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.FeedImageDataLoaderTask"
+                  moduleName = "EssentialFeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stefano/Documents/iOS%20Lead%20Essential/EssentialFeed/EssentialFeed/Feed%20Cache/LocalFeedImageDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
