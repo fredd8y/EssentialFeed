@@ -14,20 +14,68 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>EssentialFeedAPI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>EssentialFeedAPIEndToEndTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>EssentialFeedAPITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>EssentialFeedCache.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>EssentialFeedCacheIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>EssentialFeedPresentation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>EssentialFeediOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0832C67C22A0223A00E1C5E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B06D2FD29BCC14E0071A32D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B06D30429BCC14E0071A32D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BF285E329BCBB1F0059FD6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BF285FB29BCBC590059FD6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
