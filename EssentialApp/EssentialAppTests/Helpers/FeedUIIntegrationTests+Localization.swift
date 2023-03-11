@@ -5,6 +5,7 @@
 import Foundation
 import XCTest
 import EssentialFeed
+import EssentialFeedPresentation
 
 extension FeedUIIntegrationTests {
 	func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
