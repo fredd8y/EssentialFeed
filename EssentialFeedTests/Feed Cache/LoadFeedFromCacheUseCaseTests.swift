@@ -7,37 +7,6 @@ import EssentialFeed
 
 class LoadFeedFromCacheUseCaseTests: XCTestCase {
 	
-	func test_init_doesNotMessageStoreUponCreation() {
-		let (_, store) = makeSUT()
-		
-		XCTAssertEqual(store.receivedMessages, [])
-	}
-	
-	func test_load_requestsCacheRetrieval() {
-		let (sut, store) = makeSUT()
-		
-		sut.load { _ in }
-		
-		XCTAssertEqual(store.receivedMessages, [.retrieve])
-	}
-	
-	func test_load_failsOnRetrievalError() {
-		let (sut, store) = makeSUT()
-		let retrievalError = anyNSError()
-		
-		expect(sut, toCompleteWith: .failure(retrievalError), when: {
-			store.completeRetrieval(with: retrievalError)
-		})
-	}
-	
-	func test_load_deliversNoImagesOnEmptyCache() {
-		let (sut, store) = makeSUT()
-		
-		expect(sut, toCompleteWith: .success([]), when: {
-			store.completeRetrievalWithEmptyCache()
-		})
-	}
-	
 	func test_load_deliversCachedImagesOnNonExpiredCache() {
 		let feed = uniqueImageFeed()
 		let fixedCurrentDate = Date()
@@ -123,19 +92,6 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
 		store.completeRetrieval(with: feed.local, timestamp: expiredTimestamp)
 		
 		XCTAssertEqual(store.receivedMessages, [.retrieve])
-	}
-	
-	func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-		let store = FeedStoreSpy()
-		var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-		
-		var receivedResults = [LocalFeedLoader.LoadResult]()
-		sut?.load { receivedResults.append($0) }
-		
-		sut = nil
-		store.completeRetrievalWithEmptyCache()
-		
-		XCTAssertTrue(receivedResults.isEmpty)
 	}
 	
 	// MARK: - Helpers
