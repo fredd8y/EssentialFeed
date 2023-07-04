@@ -16,6 +16,18 @@ extension ListViewController {
 		refreshControl?.simulatePullToRefresh()
 	}
 	
+	var isShowingLoadingIndicator: Bool {
+		return refreshControl?.isRefreshing == true
+	}
+	
+	func simulateErrorViewTap() {
+		errorView.simulateTap()
+	}
+	
+	var errorMessage: String? {
+		return errorView.message
+	}
+	
 	@discardableResult
 	func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
 		return feedImageView(at: index) as? FeedImageCell
@@ -48,18 +60,6 @@ extension ListViewController {
 		let ds = tableView.prefetchDataSource
 		let index = IndexPath(row: row, section: feedImagesSection)
 		ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
-	}
-	
-	func simulateErrorViewTap() {
-		errorView.simulateTap()
-	}
-	
-	var errorMessage: String? {
-		return errorView.message
-	}
-
-	var isShowingLoadingIndicator: Bool {
-		return refreshControl?.isRefreshing == true
 	}
 	
 	func numberOfRenderedFeedImageViews() -> Int {
