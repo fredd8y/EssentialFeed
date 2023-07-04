@@ -84,9 +84,10 @@
 		7B55ED6F2A54293200A7B812 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED6E2A54293100A7B812 /* ResourceLoadingView.swift */; };
 		7B55ED712A542ACF00A7B812 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED702A542ACF00A7B812 /* ResourceErrorView.swift */; };
 		7B55ED732A542AE900A7B812 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED722A542AE900A7B812 /* ResourceErrorViewModel.swift */; };
-		7B55ED752A54423300A7B812 /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B55ED742A54423300A7B812 /* ImageComments.strings */; };
 		7B55ED772A54424600A7B812 /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED762A54424600A7B812 /* ImageCommentsPresenter.swift */; };
 		7B55ED7B2A5442BE00A7B812 /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED7A2A5442BE00A7B812 /* ImageCommentsPresenterTests.swift */; };
+		7B55ED7C2A54431E00A7B812 /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B55ED7E2A54431E00A7B812 /* ImageComments.strings */; };
+		7B55ED822A54434500A7B812 /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED812A54434500A7B812 /* ImageCommentsLocalizationTests.swift */; };
 		7B7E1A8929B120E9001AB03A /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E1A8829B120E9001AB03A /* FeedCache.swift */; };
 		7B9501FA29B38F1A00D707D6 /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501F929B38F1A00D707D6 /* FeedImageDataCache.swift */; };
 		7BA778C529AD213100A52756 /* HTTPURLResponse+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778C429AD213100A52756 /* HTTPURLResponse+StatusCode.swift */; };
@@ -218,9 +219,12 @@
 		7B55ED6E2A54293100A7B812 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		7B55ED702A542ACF00A7B812 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
 		7B55ED722A542AE900A7B812 /* ResourceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorViewModel.swift; sourceTree = "<group>"; };
-		7B55ED742A54423300A7B812 /* ImageComments.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ImageComments.strings; sourceTree = "<group>"; };
 		7B55ED762A54424600A7B812 /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
 		7B55ED7A2A5442BE00A7B812 /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
+		7B55ED7D2A54431E00A7B812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		7B55ED7F2A54432100A7B812 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		7B55ED802A54432200A7B812 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ImageComments.strings"; sourceTree = "<group>"; };
+		7B55ED812A54434500A7B812 /* ImageCommentsLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsLocalizationTests.swift; sourceTree = "<group>"; };
 		7B7E1A8829B120E9001AB03A /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
 		7B9501F929B38F1A00D707D6 /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
 		7BA778C429AD213100A52756 /* HTTPURLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCode.swift"; sourceTree = "<group>"; };
@@ -662,7 +666,7 @@
 		7B55ED782A54427F00A7B812 /* Image Comments Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7B55ED742A54423300A7B812 /* ImageComments.strings */,
+				7B55ED7E2A54431E00A7B812 /* ImageComments.strings */,
 				7B55ED762A54424600A7B812 /* ImageCommentsPresenter.swift */,
 			);
 			path = "Image Comments Presentation";
@@ -672,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				7B55ED7A2A5442BE00A7B812 /* ImageCommentsPresenterTests.swift */,
+				7B55ED812A54434500A7B812 /* ImageCommentsLocalizationTests.swift */,
 			);
 			path = "Image Comments Presentation";
 			sourceTree = "<group>";
@@ -880,7 +885,7 @@
 			files = (
 				087148B7232BEB5400D6BE1A /* Feed.strings in Resources */,
 				7B55ED652A5426EC00A7B812 /* Shared.strings in Resources */,
-				7B55ED752A54423300A7B812 /* ImageComments.strings in Resources */,
+				7B55ED7C2A54431E00A7B812 /* ImageComments.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +994,7 @@
 				7BA778E029AD285C00A52756 /* FeedImageDataStoreSpy.swift in Sources */,
 				7B55ED6B2A54275700A7B812 /* SharedLocalizationTests.swift in Sources */,
 				086BE481223270A3004CDC26 /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
+				7B55ED822A54434500A7B812 /* ImageCommentsLocalizationTests.swift in Sources */,
 				0875468C2272340500542C32 /* FeedStoreSpecs.swift in Sources */,
 				7BA778E229AD287200A52756 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
 				0844768F21FCB24E00439BE9 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
@@ -1093,6 +1099,16 @@
 				7B55ED692A5426EF00A7B812 /* pt-BR */,
 			);
 			name = Shared.strings;
+			sourceTree = "<group>";
+		};
+		7B55ED7E2A54431E00A7B812 /* ImageComments.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B55ED7D2A54431E00A7B812 /* en */,
+				7B55ED7F2A54432100A7B812 /* el */,
+				7B55ED802A54432200A7B812 /* pt-BR */,
+			);
+			name = ImageComments.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
