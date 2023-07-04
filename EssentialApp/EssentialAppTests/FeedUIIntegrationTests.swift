@@ -105,6 +105,8 @@ final class FeedUIIntegrationTests: XCTestCase {
 		XCTAssertEqual(sut.errorMessage, nil)
 	}
 
+	// MARK: - Image View Tests
+	
 	func test_feedImageView_loadsImageURLWhenVisible() {
 		let image0 = makeImage(url: URL(string: "http://url-0.com")!)
 		let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -284,7 +286,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 	func test_loadFeedCompletion_dispatchesFromBackgroundToMainThread() {
 		let (sut, loader) = makeSUT()
 		sut.loadViewIfNeeded()
-
+		
 		let exp = expectation(description: "Wait for background queue")
 		DispatchQueue.global().async {
 			loader.completeFeedLoading(at: 0)
