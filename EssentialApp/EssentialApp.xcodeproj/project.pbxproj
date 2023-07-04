@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B55ED522A5418F300A7B812 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED512A5418F300A7B812 /* CombineHelpers.swift */; };
+		7B55EDB92A5482CE00A7B812 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */; };
+		7B55EDBB2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55EDBA2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift */; };
 		7B65C1C029AD2A5300C267F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */; };
 		7B65C1C229AD2A5300C267F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */; };
 		7B65C1C429AD2A5300C267F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1C329AD2A5300C267F1 /* ViewController.swift */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		7B55ED512A5418F300A7B812 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
+		7B55EDBA2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
 		7B65C1BC29AD2A5300C267F1 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				7B65C1CA29AD2A5300C267F1 /* LaunchScreen.storyboard */,
 				7B65C1C529AD2A5300C267F1 /* Main.storyboard */,
 				7B55ED512A5418F300A7B812 /* CombineHelpers.swift */,
+				7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				7B65C20729AE7BC400C267F1 /* Helpers */,
 				7BB5774F29B4F750006DF14E /* FeedAcceptanceTests.swift */,
 				7BB5775529B4F7B9006DF14E /* SceneDelegateTests.swift */,
+				7B55EDBA2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				7B55ED522A5418F300A7B812 /* CombineHelpers.swift in Sources */,
 				7BB5773629B4F09B006DF14E /* FeedViewAdapter.swift in Sources */,
 				7BB5773829B4F09B006DF14E /* LoadResourcePresentationAdapter.swift in Sources */,
+				7B55EDB92A5482CE00A7B812 /* CommentsUIComposer.swift in Sources */,
 				7B65C1C029AD2A5300C267F1 /* AppDelegate.swift in Sources */,
 				7B65C1C229AD2A5300C267F1 /* SceneDelegate.swift in Sources */,
 				7BB5773529B4F09B006DF14E /* WeakRefVirtualProxy.swift in Sources */,
@@ -340,6 +347,7 @@
 				7BB5774729B4F0C0006DF14E /* UIButton+TestHelpers.swift in Sources */,
 				7BB5774629B4F0C0006DF14E /* FeedUIIntegrationTests+Localization.swift in Sources */,
 				7BB5775429B4F7A5006DF14E /* InMemoryFeedStore.swift in Sources */,
+				7B55EDBB2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
