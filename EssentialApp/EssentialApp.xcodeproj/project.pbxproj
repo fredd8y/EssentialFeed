@@ -25,7 +25,7 @@
 		7B9501FC29B39FDA00D707D6 /* FeedImageCacheSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9501FB29B39FDA00D707D6 /* FeedImageCacheSpy.swift */; };
 		7BB5773529B4F09B006DF14E /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5773329B4F09B006DF14E /* WeakRefVirtualProxy.swift */; };
 		7BB5773629B4F09B006DF14E /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5773129B4F09B006DF14E /* FeedViewAdapter.swift */; };
-		7BB5773829B4F09B006DF14E /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5773029B4F09B006DF14E /* FeedLoaderPresentationAdapter.swift */; };
+		7BB5773829B4F09B006DF14E /* LoadResourcePresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5773029B4F09B006DF14E /* LoadResourcePresentationAdapter.swift */; };
 		7BB5773929B4F09B006DF14E /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5773229B4F09B006DF14E /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		7BB5773A29B4F09B006DF14E /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5772F29B4F09B006DF14E /* FeedUIComposer.swift */; };
 		7BB5774429B4F0C0006DF14E /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5774029B4F0C0006DF14E /* UIRefreshControl+TestHelpers.swift */; };
@@ -88,7 +88,7 @@
 		7B9501F329B38CD500D707D6 /* FeedImageDataLoaderTaskStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderTaskStub.swift; sourceTree = "<group>"; };
 		7B9501FB29B39FDA00D707D6 /* FeedImageCacheSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCacheSpy.swift; sourceTree = "<group>"; };
 		7BB5772F29B4F09B006DF14E /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
-		7BB5773029B4F09B006DF14E /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		7BB5773029B4F09B006DF14E /* LoadResourcePresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresentationAdapter.swift; sourceTree = "<group>"; };
 		7BB5773129B4F09B006DF14E /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		7BB5773229B4F09B006DF14E /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		7BB5773329B4F09B006DF14E /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				7BB5772F29B4F09B006DF14E /* FeedUIComposer.swift */,
 				7BB5773329B4F09B006DF14E /* WeakRefVirtualProxy.swift */,
 				7BB5773229B4F09B006DF14E /* FeedImageDataLoaderPresentationAdapter.swift */,
-				7BB5773029B4F09B006DF14E /* FeedLoaderPresentationAdapter.swift */,
+				7BB5773029B4F09B006DF14E /* LoadResourcePresentationAdapter.swift */,
 				7BB5773129B4F09B006DF14E /* FeedViewAdapter.swift */,
 				7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */,
 				7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */,
@@ -317,7 +317,7 @@
 				7B65C1C429AD2A5300C267F1 /* ViewController.swift in Sources */,
 				7B55ED522A5418F300A7B812 /* CombineHelpers.swift in Sources */,
 				7BB5773629B4F09B006DF14E /* FeedViewAdapter.swift in Sources */,
-				7BB5773829B4F09B006DF14E /* FeedLoaderPresentationAdapter.swift in Sources */,
+				7BB5773829B4F09B006DF14E /* LoadResourcePresentationAdapter.swift in Sources */,
 				7B65C1C029AD2A5300C267F1 /* AppDelegate.swift in Sources */,
 				7B65C1C229AD2A5300C267F1 /* SceneDelegate.swift in Sources */,
 				7BB5773529B4F09B006DF14E /* WeakRefVirtualProxy.swift in Sources */,
