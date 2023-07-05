@@ -10,6 +10,7 @@
 		7B55ED522A5418F300A7B812 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55ED512A5418F300A7B812 /* CombineHelpers.swift */; };
 		7B55EDB92A5482CE00A7B812 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */; };
 		7B55EDBB2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55EDBA2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift */; };
+		7B55EDD52A55AD5D00A7B812 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B55EDD42A55AD5D00A7B812 /* NullStore.swift */; };
 		7B65C1C029AD2A5300C267F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */; };
 		7B65C1C229AD2A5300C267F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */; };
 		7B65C1C429AD2A5300C267F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65C1C329AD2A5300C267F1 /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 		7B55ED512A5418F300A7B812 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
 		7B55EDBA2A5482ED00A7B812 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
+		7B55EDD42A55AD5D00A7B812 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		7B65C1BC29AD2A5300C267F1 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B65C1BF29AD2A5300C267F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B65C1C129AD2A5300C267F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				7B65C1C529AD2A5300C267F1 /* Main.storyboard */,
 				7B55ED512A5418F300A7B812 /* CombineHelpers.swift */,
 				7B55EDB82A5482CE00A7B812 /* CommentsUIComposer.swift */,
+				7B55EDD42A55AD5D00A7B812 /* NullStore.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				7B65C1C429AD2A5300C267F1 /* ViewController.swift in Sources */,
 				7B55ED522A5418F300A7B812 /* CombineHelpers.swift in Sources */,
+				7B55EDD52A55AD5D00A7B812 /* NullStore.swift in Sources */,
 				7BB5773629B4F09B006DF14E /* FeedViewAdapter.swift in Sources */,
 				7BB5773829B4F09B006DF14E /* LoadResourcePresentationAdapter.swift in Sources */,
 				7B55EDB92A5482CE00A7B812 /* CommentsUIComposer.swift in Sources */,
