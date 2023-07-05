@@ -126,7 +126,7 @@
 		7BA778C829AD21BE00A52756 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC5AA922D5F47900148E12 /* FeedImageDataLoader.swift */; };
 		7BA778CE29AD226F00A52756 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778CD29AD226F00A52756 /* URLProtocolStub.swift */; };
 		7BA778D229AD24B400A52756 /* FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778D129AD24B400A52756 /* FeedImageDataStore.swift */; };
-		7BA778D529AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
+		7BA778D529AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataStore.swift */; };
 		7BA778D729AD255F00A52756 /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778D629AD255F00A52756 /* CoreDataFeedStore+FeedStore.swift */; };
 		7BA778DA29AD272E00A52756 /* LocalFeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778D929AD272E00A52756 /* LocalFeedImageDataLoader.swift */; };
 		7BA778DC29AD281500A52756 /* CacheFeedImageDataUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA778DB29AD281500A52756 /* CacheFeedImageDataUseCaseTests.swift */; };
@@ -294,7 +294,7 @@
 		7BA778C429AD213100A52756 /* HTTPURLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCode.swift"; sourceTree = "<group>"; };
 		7BA778CD29AD226F00A52756 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		7BA778D129AD24B400A52756 /* FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStore.swift; sourceTree = "<group>"; };
-		7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataStore.swift"; sourceTree = "<group>"; };
 		7BA778D629AD255F00A52756 /* CoreDataFeedStore+FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedStore.swift"; sourceTree = "<group>"; };
 		7BA778D829AD26A700A52756 /* FeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore2.xcdatamodel; sourceTree = "<group>"; };
 		7BA778D929AD272E00A52756 /* LocalFeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImageDataLoader.swift; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 				08285AFC228C1843000A8987 /* ManagedCache.swift */,
 				08285AFE228C1874000A8987 /* ManagedFeedImage.swift */,
 				08285AF2228BFAFF000A8987 /* FeedStore.xcdatamodeld */,
-				7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
+				7BA778D429AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataStore.swift */,
 				7BA778D629AD255F00A52756 /* CoreDataFeedStore+FeedStore.swift */,
 			);
 			path = CoreData;
@@ -1123,7 +1123,7 @@
 				7B55EDD32A554C8300A7B812 /* Paginated.swift in Sources */,
 				7B9501FA29B38F1A00D707D6 /* FeedImageDataCache.swift in Sources */,
 				7B55EDBD2A55478000A7B812 /* FeedEndpoint.swift in Sources */,
-				7BA778D529AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
+				7BA778D529AD24DD00A52756 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */,
 				087148C4232BFCF100D6BE1A /* FeedImageViewModel.swift in Sources */,
 				7B55ED3C2A540B4C00A7B812 /* ImageComment.swift in Sources */,
 				7B55ED772A54424600A7B812 /* ImageCommentsPresenter.swift in Sources */,
