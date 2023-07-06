@@ -1,22 +1,21 @@
 //
-//  Copyright © 2019 Essential Developer. All rights reserved.
+// Copyright © Essential Developer. All rights reserved.
 //
 
 import UIKit
 import EssentialFeed
 
 public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
-	
-	public var onRefresh: (() -> Void)?
-
 	private(set) public var errorView = ErrorView()
-
+	
 	private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = {
 		.init(tableView: tableView) { (tableView, index, controller) in
 			controller.dataSource.tableView(tableView, cellForRowAt: index)
 		}
 	}()
-
+	
+	public var onRefresh: (() -> Void)?
+	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -58,7 +57,12 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
 			snapshot.appendSections([section])
 			snapshot.appendItems(cellControllers, toSection: section)
 		}
-		dataSource.apply(snapshot)
+		
+		if #available(iOS 15.0, *) {
+			dataSource.applySnapshotUsingReloadData(snapshot)
+		} else {
+			dataSource.apply(snapshot)
+		}
 	}
 	
 	public func display(_ viewModel: ResourceLoadingViewModel) {

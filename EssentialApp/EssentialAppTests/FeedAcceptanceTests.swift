@@ -1,8 +1,5 @@
 //
-//  FeedAcceptanceTests.swift
-//  EssentialAppTests
-//
-//  Created by Federico Arvat on 05/03/23.
+//  Copyright © Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -39,10 +36,10 @@ class FeedAcceptanceTests: XCTestCase {
 	
 	func test_onLaunch_displaysCachedRemoteFeedWhenCustomerHasNoConnectivity() {
 		let sharedStore = InMemoryFeedStore.empty
+		
 		let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
 		onlineFeed.simulateFeedImageViewVisible(at: 0)
 		onlineFeed.simulateFeedImageViewVisible(at: 1)
-		
 		onlineFeed.simulateLoadMoreFeedAction()
 		onlineFeed.simulateFeedImageViewVisible(at: 2)
 		
@@ -84,6 +81,7 @@ class FeedAcceptanceTests: XCTestCase {
 	}
 	
 	// MARK: - Helpers
+	
 	private func launch(
 		httpClient: HTTPClientStub = .offline,
 		store: InMemoryFeedStore = .empty
@@ -121,6 +119,7 @@ class FeedAcceptanceTests: XCTestCase {
 		case "/image-0": return makeImageData0()
 		case "/image-1": return makeImageData1()
 		case "/image-2": return makeImageData2()
+			
 		case "/essential-feed/v1/feed" where url.query?.contains("after_id") == false:
 			return makeFirstFeedPageData()
 			
@@ -132,6 +131,7 @@ class FeedAcceptanceTests: XCTestCase {
 			
 		case "/essential-feed/v1/image/2AB2AE66-A4B7-4A16-B374-51BBAC8DB086/comments":
 			return makeCommentsData()
+			
 		default:
 			return Data()
 		}
@@ -155,11 +155,11 @@ class FeedAcceptanceTests: XCTestCase {
 	}
 	
 	private func makeLastEmptyFeedPageData() -> Data {
-		return try! JSONSerialization.data(withJSONObject: ["items": []])
+		try! JSONSerialization.data(withJSONObject: ["items": [[String: Any]]()])
 	}
 	
 	private func makeCommentsData() -> Data {
-		return try! JSONSerialization.data(withJSONObject: ["items": [
+		try! JSONSerialization.data(withJSONObject: ["items": [
 			[
 				"id": UUID().uuidString,
 				"message": makeCommentMessage(),
@@ -167,11 +167,12 @@ class FeedAcceptanceTests: XCTestCase {
 				"author": [
 					"username": "a username"
 				]
-			],
+			] as [String: Any],
 		]])
 	}
 	
 	private func makeCommentMessage() -> String {
 		"a message"
 	}
+	
 }
